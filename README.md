@@ -9,3 +9,4 @@ Realicé los siguientes cambios mínimos para que el código pudiera compilar y 
 6. Agregué la clase Main para crear una orden y demostrar el funcionamiento básico del programa.
 7. Guardé los archivos compilados .class dentro de la carpeta bin, siguiendo las indicaciones de la pizarra.
 8. Optimicé las relaciones de las clases, modifique Pago y DetalleDePago hacia la clase Orden.
+
