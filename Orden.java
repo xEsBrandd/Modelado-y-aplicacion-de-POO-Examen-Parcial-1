@@ -4,15 +4,29 @@ public class Orden {
     private boolean tipoOrden;
     private int idOrden;
     private LocalTime tiempo;
+    private Pizza pizza;
+    private Pago pago;
+    private DetalleDePago detalleDePago;
 
-    public Orden(boolean tipoOrden, int idOrden) {
+    public Orden(
+            boolean tipoOrden,
+            int idOrden,
+            Pizza pizza,
+            Pago pago,
+            DetalleDePago detalleDePago
+    ) {
         this.tipoOrden = tipoOrden;
         this.idOrden = idOrden;
         this.tiempo = LocalTime.now();
+        this.pizza = pizza;
+        this.pago = pago;
+        this.detalleDePago = detalleDePago;
     }
 
     public void prepararOrden() {
-        System.out.println("Preparando la orden " + idOrden);
+        System.out.println(
+                "Preparando la orden " + idOrden
+        );
     }
 
     public void guardarOrden() {
@@ -25,7 +39,18 @@ public class Orden {
 
     public void mostrarOrden() {
         System.out.println("Orden: " + idOrden);
-        System.out.println("Tipo de orden: " + tipoOrden);
+
+        System.out.println(
+                "Tipo de orden: "
+                + (tipoOrden
+                ? "Para llevar"
+                : "Comer en el restaurante")
+        );
+
         System.out.println("Hora: " + tiempo);
+
+        pizza.mostrarPizza();
+        pago.mostrarPago();
+        detalleDePago.mostrarPago();
     }
 }
