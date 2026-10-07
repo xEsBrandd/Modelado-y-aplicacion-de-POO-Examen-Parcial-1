@@ -24,4 +24,8 @@ public class DetalleDePago {
                 + " - Fecha: " + fecha
         );
     }
+    public String obtenerResumen() {
+    return "ID del pago: " + idPago + "<br>"
+            + "Fecha: " + fecha + "<br>";
+}
 }

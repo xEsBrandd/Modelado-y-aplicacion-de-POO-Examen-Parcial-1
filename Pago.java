@@ -36,4 +36,18 @@ public class Pago {
                 + cantidadProductos
         );
     }
+    public String obtenerResumen() {
+    String pagoMostrado;
+
+    if (tipoDePago == TipoDePago.CASH) {
+        pagoMostrado = "EFECTIVO";
+    } else {
+        pagoMostrado = tipoDePago.toString();
+    }
+
+    return "<b>Pago</b><br>"
+            + "Tipo: " + pagoMostrado + "<br>"
+            + "Cantidad de productos: "
+            + cantidadProductos + "<br>";
+}
 }

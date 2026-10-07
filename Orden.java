@@ -42,9 +42,9 @@ public class Orden {
 
         System.out.println(
                 "Tipo de orden: "
-                + (tipoOrden
-                ? "Para llevar"
-                : "Comer en el restaurante")
+                        + (tipoOrden
+                        ? "Para llevar"
+                        : "Comer en el restaurante")
         );
 
         System.out.println("Hora: " + tiempo);
@@ -52,5 +52,28 @@ public class Orden {
         pizza.mostrarPizza();
         pago.mostrarPago();
         detalleDePago.mostrarPago();
+    }
+
+    public String obtenerResumen() {
+        String tipo;
+
+        if (tipoOrden) {
+            tipo = "Para llevar";
+        } else {
+            tipo = "Comer en el restaurante";
+        }
+
+        return "<html>"
+                + "<div style='text-align:center'>"
+                + "<h2>Orden " + idOrden + "</h2>"
+                + "<b>Tipo de orden:</b> "
+                + tipo + "<br>"
+                + "<b>Hora:</b> "
+                + tiempo + "<br><br>"
+                + pizza.obtenerResumen()
+                + pago.obtenerResumen()
+                + detalleDePago.obtenerResumen()
+                + "</div>"
+                + "</html>";
     }
 }

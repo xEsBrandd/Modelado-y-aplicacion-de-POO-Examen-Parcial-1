@@ -29,7 +29,13 @@ public class Pizza {
         this.topping = topping;
         this.tipoDeMasa = tipoDeMasa;
     }
-
+    public String obtenerResumen() {
+    return "<b>Pizza</b><br>"
+            + "Masa: " + tipoDeMasa + "<br>"
+            + "Salsa: " + tipoDeSalsa + "<br>"
+            + "Topping: " + topping + "<br>"
+            + "Capacidad: " + capacidad + "<br><br>";
+}
     public void mostrarPizza() {
         System.out.println("Masa: " + tipoDeMasa);
         System.out.println("Salsa: " + tipoDeSalsa);
